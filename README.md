@@ -44,13 +44,11 @@ git clone https://github.com/gary-boyle/UCTools_CommandConsole.git
 
 ### 3. Basic Setup
 I use the ConsoleManager.cs script as a Singleton, but you can initialize the ConsoleGUI and Console objects however you like. 
-```
 
 ## Architecture Overview
 
 ### Core Components
-
-```
+``` 
 UCTools_CommandConsole
 ├── Console.cs                      # Main console system and command execution
 ├── ConsoleContext.cs               # Safe context for command execution
@@ -82,20 +80,8 @@ UCTools_CommandConsole
 4. **Execution**: Console parses arguments and executes matching commands
 5. **Output**: Commands use `IConsoleContext` to send results back to UI
 
-### Command Lifecycle
 
-```mermaid
-graph TD
-    A[User Types Command] --> B[UI Captures Input]
-    B --> C[Console.ExecuteCommand]
-    C --> D[Parse Arguments]
-    D --> E[Find Registered Command]
-    E --> F[Validate Arguments]
-    F --> G[Execute Command]
-    G --> H[Display Results]
-```
-
-## 📝 Creating Custom Commands
+## Creating Custom Commands
 
 ### Method 1: Simple Command (Recommended)
 
