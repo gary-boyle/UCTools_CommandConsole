@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using UCTools_CommandConsole.Enums;
 
 namespace UCTools_CommandConsole
 {
@@ -11,7 +12,7 @@ namespace UCTools_CommandConsole
     {
         public override string CommandName => "exec";
         public override string Description => "Execute commands from file";
-        public override string Category => "Scripting";
+        public override CategoryEnum Category => CategoryEnum.Scripting;
 
         public override void Execute(string[] args, IConsoleContext context)
         {

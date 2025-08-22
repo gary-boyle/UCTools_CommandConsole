@@ -1,4 +1,5 @@
-﻿using UCTools_CommandConsole.Utilities;
+﻿using UCTools_CommandConsole.Enums;
+using UCTools_CommandConsole.Utilities;
 using UnityEngine;
 
 namespace UCTools_CommandConsole
@@ -36,7 +37,7 @@ namespace UCTools_CommandConsole
         /// Category for organizing commands in help display
         /// Common categories: "System", "Debug", "Game", "Testing", "Development"
         /// </summary>
-        public override string Category => "Development";
+        public override CategoryEnum Category => CategoryEnum.Development;
         
         /// <summary>
         /// Tag for bulk operations (optional - use 0 if not needed)

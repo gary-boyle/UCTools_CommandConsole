@@ -1,4 +1,6 @@
-﻿namespace UCTools_CommandConsole
+﻿using UCTools_CommandConsole.Enums;
+
+namespace UCTools_CommandConsole
 {
     /// <summary>
     /// Interface for console commands that can be executed from the command line
@@ -19,7 +21,7 @@
         /// <summary>
         /// Command category for organization
         /// </summary>
-        string Category { get; }
+        CategoryEnum Category { get; }
     
         /// <summary>
         /// Tag for bulk operations (removal, filtering)

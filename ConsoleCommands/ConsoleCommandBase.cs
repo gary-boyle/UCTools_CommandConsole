@@ -1,4 +1,6 @@
-﻿namespace UCTools_CommandConsole
+﻿using UCTools_CommandConsole.Enums;
+
+namespace UCTools_CommandConsole
 {
     /// <summary>
     /// Base class for console commands providing common functionality
@@ -8,7 +10,7 @@
     {
         public abstract string CommandName { get; }
         public abstract string Description { get; }
-        public virtual string Category => "General";
+        public virtual CategoryEnum Category => CategoryEnum.General;
         public virtual int Tag => 0;
 
         public abstract void Execute(string[] args, IConsoleContext context);

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using UCTools_CommandConsole.Enums;
 
 namespace UCTools_CommandConsole
 {
@@ -10,7 +11,7 @@ namespace UCTools_CommandConsole
     {
         public override string CommandName => "help";
         public override string Description => "Show available commands";
-        public override string Category => "System";
+        public override CategoryEnum Category => CategoryEnum.General;
 
         public override void Execute(string[] args, IConsoleContext context)
         {
@@ -43,7 +44,7 @@ namespace UCTools_CommandConsole
                 .OrderBy(cmd => cmd.Category)
                 .ThenBy(cmd => cmd.CommandName);
                 
-            string lastCategory = "";
+            CategoryEnum lastCategory = CategoryEnum.General;
             foreach (var cmd in commands)
             {
                 if (cmd.Category != lastCategory)

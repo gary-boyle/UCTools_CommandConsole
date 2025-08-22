@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UCTools_CommandConsole.Enums;
 using UnityEngine;
 
 namespace UCTools_CommandConsole
@@ -47,7 +48,6 @@ namespace UCTools_CommandConsole
             RegisterCommand(new HelpCommand());
             RegisterCommand(new VarsCommand());
             RegisterCommand(new WaitCommand());
-            RegisterCommand(new WaitLoadCommand());
             RegisterCommand(new ExecCommand());
         }
 
@@ -93,7 +93,6 @@ namespace UCTools_CommandConsole
             return commandType == typeof(HelpCommand) ||
                    commandType == typeof(VarsCommand) ||
                    commandType == typeof(WaitCommand) ||
-                   commandType == typeof(WaitLoadCommand) ||
                    commandType == typeof(ExecCommand);
         }
 
@@ -174,9 +173,9 @@ namespace UCTools_CommandConsole
         /// <summary>
         /// Get commands by category
         /// </summary>
-        public static IEnumerable<IConsoleCommand> GetCommandsByCategory(string category)
+        public static IEnumerable<IConsoleCommand> GetCommandsByCategory(CategoryEnum category)
         {
-            return _commands.Values.Where(cmd => cmd.Category.Equals(category, StringComparison.OrdinalIgnoreCase));
+            return _commands.Values.Where(cmd => cmd.Category == category);
         }
 
         /// <summary>

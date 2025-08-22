@@ -1,4 +1,6 @@
-﻿namespace UCTools_CommandConsole
+﻿using UCTools_CommandConsole.Enums;
+
+namespace UCTools_CommandConsole
 {
     /// <summary>
     /// Wait command that pauses command execution for specified number of frames
@@ -8,7 +10,7 @@
     {
         public override string CommandName => "wait";
         public override string Description => "Wait for next frame or specified number of frames";
-        public override string Category => "Scripting";
+        public override CategoryEnum Category => CategoryEnum.Scripting;
 
         public override void Execute(string[] args, IConsoleContext context)
         {

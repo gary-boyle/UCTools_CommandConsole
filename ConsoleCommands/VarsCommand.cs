@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using UCTools_CommandConsole.Enums;
 using UCTools_ConfigVariables;
 
 namespace UCTools_CommandConsole
@@ -11,7 +12,7 @@ namespace UCTools_CommandConsole
     {
         public override string CommandName => "vars";
         public override string Description => "Show available configuration variables";
-        public override string Category => "System";
+        public override CategoryEnum Category => CategoryEnum.System;
 
         public override void Execute(string[] args, IConsoleContext context)
         {
